@@ -133,6 +133,25 @@ html {
   border-radius: 20px;
   padding: 5px;
 }
+.container-map {
+  height: 100vh;
+  position: relative;
+}
 .map-container {
   height: 100%;
+}
+.small-button {
+  width: 90%;
+  margin: auto;
+}
+.loading-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.map-text {
+  position: absolute;
+  top: 25%;
 }

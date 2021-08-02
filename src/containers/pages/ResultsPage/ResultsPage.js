@@ -7,13 +7,15 @@ import arrowLeft from 'assets/arrow-left.svg'
 
 import ResultsFound from 'components/ResultsFound/ResultsFound'
 import ResultCard from 'components/ResultCard/ResultCard'
+import RoundSpinner from 'components/Loading/RoundSpinner'
 
 import { Row, Col } from 'react-bootstrap'
 import queryString from 'query-string'
-import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { useHistory } from 'react-router-dom'
 
 const ResultsPage = () => {
+    const history = useHistory()
+
     const [data, setData] = useState([])
     const [name, setName] = useState('')
     const [isLoading, setIsLoading] = useState(true)
@@ -33,6 +35,11 @@ const ResultsPage = () => {
             console.log(err)
         }
     }
+    const openMap = (elem) => {
+        const { gps_lat,  gps_long} = elem
+        history.push(`/mapa?lat=${gps_lat}&long=${gps_long}`)
+    }
+
     useEffect(() => {
         const parsed = queryString.parse(window.location.search);
         setName(parsed.ime)
@@ -54,7 +61,7 @@ const ResultsPage = () => {
                 </Col>
             </Row>
             {isLoading ? (
-                <Loader type="TailSpin" color="#008752" height={80} width={80} />
+                <RoundSpinner />
             ) : (
             <>
                 <Row>
@@ -65,7 +72,7 @@ const ResultsPage = () => {
                 <Row className='text-center mt-5 results-row'>
                     {data.length > 0 && data.map(elem => (
                         <Col lg={4} md={6} sm={6} xs={12}>
-                            <ResultCard data={elem}/>
+                            <ResultCard data={elem} onClick={() => openMap(elem)}/>
                         </Col>
                     ))}
                 </Row>
