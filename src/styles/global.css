@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;400&display=swap");
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+.main-page-wrapper {
+  height: 100vh;
+  width: 100vw;
+  /* overflow: hidden;
+  position: fixed; */
+  /* top: 0;
+  left: 0; */
+  overflow-x: hidden;
+  background: linear-gradient(rgba(38, 38, 38, 0.8), rgba(38, 38, 38, 0.8)),
+    url("/src/assets/background.svg");
+  background-size: cover;
+  position: relative;
+}
+.headline-row {
+  text-align: center;
+  color: #fff;
+  font-family: "Barlow", sans-serif;
+  font-weight: normal;
+  padding-top: 3%;
+}
+.headline-row p {
+  margin-top: 33px;
+  font-weight: 200;
+}
+.form-row {
+  margin-top: 91px;
+  text-align: center;
+}
+.form-control {
+  width: 30%;
+  margin-bottom: 39px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding-left: 1%;
+  margin: auto;
+}
+.form-control::placeholder {
+  color: #000;
+  font-size: 13px;
+}
+.search-button {
+  height: 50px;
+  width: 13%;
+  border-radius: 10px;
+  background-color: #008752;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: normal;
+  letter-spacing: 0.09em;
+}
+.search-button:hover {
+  background-color: #046a41;
+}
+.mms-image {
+  width: 40%;
+}
+.footer-row {
+  margin-top: 3%;
+}
+.ajet {
+  color: #fff;
+  font-weight: 200;
+}
+.el-bekare {
+  color: #fff;
+  font-weight: 200;
+  text-align: right;
+  padding-right: 15%;
+}
+.result-mms {
+  width: 35%;
+}
+.results-page-header {
+  padding-top: 1%;
+}
+.back-to-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  height: 100%;
+}
+.back-to-search img {
+  width: 2%;
+  margin-right: 5%;
+  cursor: pointer;
+}
+.back-to-search span {
+  font-family: "Barlow", sans-serif;
+  font-weight: 200;
+  cursor: pointer;
+}
+.search-result-div {
+  color: #fff;
+  font-family: "Barlow", sans-serif;
+  font-weight: 200;
+  font-size: 17px;
+}
+.search-name {
+  font-size: 30px;
+  font-weight: 400;
+}
+.results-row {
+  width: 90%;
+  margin: auto;
+}
+.result-card-wrapper {
+  background-color: #e5e5e5;
+  margin-bottom: 5%;
+  padding: 10px;
+  border-radius: 10px;
+}
+.open-card-button {
+  background-color: #231f20;
+  color: #fff;
+  font-family: "Barlow", sans-serif;
+  font-weight: 200;
+  border: none;
+  outline: none;
+  width: 40%;
+  border-radius: 20px;
+  padding: 5px;
+}
+.map-container {
+  height: 100%;
+}
