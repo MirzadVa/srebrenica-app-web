@@ -5,6 +5,7 @@ import { Row, Col } from 'react-bootstrap'
 import moment from 'moment'
 
 const InfoContainer = ({isOpen, victimData}) => {
+    console.log('DATA', victimData)
     return (
         <Row className={isOpen ? 'info-container text-center open' : "info-container text-center close"}>
                 <Col md={3} sm={6}>
@@ -14,15 +15,15 @@ const InfoContainer = ({isOpen, victimData}) => {
                 </Col>
                 <Col md={3} sm={6}>
                     <p className='info-container-heads'>Sektor</p>
-                    <p className='info-container-info'>{victimData?.mjesto_ukopa}</p>
+                    <p className='info-container-info'>{victimData?.mjesto_ukopa.split('-')[0] }</p>
                 </Col>
                 <Col md={3} sm={6}>
                     <p className='info-container-heads'>Red</p>
-                    <p className='info-container-info'>{victimData?.mjesto_ukopa}</p>
+                    <p className='info-container-info'>{victimData?.mjesto_ukopa.split('-')[1]}</p>
                 </Col>
                 <Col md={3} sm={6}>
                     <p className='info-container-heads'>Grobno mjesto</p>
-                    <p className='info-container-info'>{victimData?.mjesto_ukopa}</p>
+                    <p className='info-container-info'>{victimData?.mjesto_ukopa.split('-')[2]}</p>
                 </Col>
             </Row>
     )

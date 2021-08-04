@@ -10,8 +10,8 @@ import ResultCard from 'components/ResultCard/ResultCard'
 import RoundSpinner from 'components/Loading/RoundSpinner'
 
 import { Row, Col } from 'react-bootstrap'
-import queryString from 'query-string'
 import { useHistory } from 'react-router-dom'
+import queryString from 'query-string'
 
 const ResultsPage = () => {
     const history = useHistory()
@@ -54,19 +54,21 @@ const ResultsPage = () => {
     return (
         <div className='main-page-wrapper'>
             <Row className='results-page-header'>
-                <Col md={4} className='text-center'>
+                <Col md={4} sm={4} xs={4} className='text-center'>
                     <div className='back-to-search'>
-                        <img src={arrowLeft}/>
+                        <img onClick={() => history.goBack()} src={arrowLeft} alt='Left arrow'/>
                         <span onClick={() => history.goBack()}>Nazad na pretragu</span>
                     </div>
                 </Col>
-                <Col md={4}></Col>
-                <Col md={4} className='text-center'>
+                <Col md={4} sm={4} xs={4}></Col>
+                <Col md={4} sm={4} xs={4} className='text-center'>
                     <img alt='Memorial Center Srebrenica' src={mmsLogo} className='mms-image result-mms'/>
                 </Col>
             </Row>
             {isLoading ? (
-                <RoundSpinner />
+                <div className='loading-container'>
+                    <RoundSpinner />
+                </div>
             ) : (
             <>
                 <Row>
@@ -75,8 +77,8 @@ const ResultsPage = () => {
                     </Col>
                 </Row>
                 <Row className='text-center mt-5 results-row'>
-                    {data.length > 0 && data.map(elem => (
-                        <Col lg={4} md={6} sm={6} xs={12}>
+                    {data.length > 0 && data.map((elem, index) => (
+                        <Col lg={4} md={6} sm={6} xs={12} key={index}>
                             <ResultCard data={elem} onClick={() => openMap(elem)}/>
                         </Col>
                     ))}

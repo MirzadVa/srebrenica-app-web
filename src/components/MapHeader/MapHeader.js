@@ -11,19 +11,19 @@ const MapHeader = () => {
     const history = useHistory()
     return(
         <Row className='map-header-wrapper'>
-            <Col md={4} sm={6} className='text-center'>
+            <Col md={4} sm={4} xs={4} className='text-center'>
                 <div className='back-to-search'>
-                    <img src={arrowLeft} alt='Strelica nazad' />
-                    <span onClick={() => history.goBack()}>Nazad na pretragu</span>
+                    <img src={arrowLeft} alt='Strelica nazad' className='back-arrow'/>
+                    <span onClick={() => history.goBack()} className='back-text'>Nazad na rezultate pretrage</span>
                 </div>
             </Col>
-            <Col md={4} className='text-center'>
+            <Col md={4} sm={4} xs={4} className='text-center'>
                 <img alt='Memorial Center Srebrenica' src={mmsLogo} className='mms-image result-mms map-mms'/>
             </Col>
-            <Col md={4} sm={6} className='text-center'>
+            <Col md={4} sm={4} xs={4} className='text-center'>
                 <div className='info-img-wrapper'>
-                    <img src={infoImg} alt='Info'/>
-                    <p>O centru</p>
+                    <img src={infoImg} alt='Info' className='info-image'/>
+                    <p className='info-text'>O centru</p>
                 </div>
             </Col>
         </Row>

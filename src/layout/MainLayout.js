@@ -7,7 +7,6 @@ import routes from '../routes'
 const MainLayout = () => {
 
     const getRoutes = (routes) => {
-        console.log(routes)
         return routes.map((prop, key) => {
             return (
                 <Route

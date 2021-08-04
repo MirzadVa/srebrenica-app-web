@@ -9,6 +9,10 @@ export default async (request) => {
   if (request.data && request.method === 'get') {
     request.data = null
   }
+  request.headers = {
+    ...request.headers,
+    'API-KEY': `${Config.API_KEY}`,
+  }
   
   return HTTP(request)
 }

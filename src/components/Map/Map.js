@@ -5,7 +5,7 @@ import axios from 'axios';
 import Config from 'config/index'
 
 
-const Map = ({lat, long, onClick}) => {
+const Map = ({lat, long, onClick, victimData}) => {
     mapboxgl.accessToken = Config.MAPBOX_ACCESS_TOKEN
 
     const mapContainer = useRef(null);
@@ -56,13 +56,14 @@ const Map = ({lat, long, onClick}) => {
                     'line-width': 5
                 }
             });
-             var marker1 = new mapboxgl.Marker()
+            map.current.addControl(new mapboxgl.FullscreenControl());
+            new mapboxgl.Marker()
                 .setLngLat(start)
                 .addTo(map.current);
 
-            var marker2 = new mapboxgl.Marker({color: 'black'})
+            new mapboxgl.Marker({color: 'black'})
                 .setPopup(new mapboxgl.Popup().setHTML(
-                    `<div class="popup-div"> <p> Ime (Ime oca) Prezime </p></div>`
+                    `<div class="popup-div"> <p> ${victimData?.ime} (${victimData?.ime_oca}) ${victimData?.prezime} </p></div>`
                 ))
                 .setLngLat(endRoute)
                 .addTo(map.current);
@@ -71,6 +72,7 @@ const Map = ({lat, long, onClick}) => {
 
     useEffect(() => {
         getData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
             <div ref={mapContainer}  className="map-container" onClick={() => onClick()}/>

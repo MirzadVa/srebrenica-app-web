@@ -54,7 +54,7 @@ const MapPage = () => {
         ) : 
         <div className='container-map'>
             <MapHeader />
-            <Map lat={lat} long={long} onClick={() => toggleContainer()}/>
+            <Map lat={lat} long={long} onClick={() => toggleContainer()} victimData={victimData}/>
             <InfoContainer isOpen={isContainerOpen} victimData={victimData}/>
         </div>
         
