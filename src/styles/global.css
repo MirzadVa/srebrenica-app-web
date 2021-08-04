@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;500&display=swap");
 *,
 body,
 html {
@@ -114,13 +114,21 @@ html {
 }
 .results-row {
   width: 90%;
-  margin: auto;
+  margin: auto !important;
 }
 .result-card-wrapper {
   background-color: #e5e5e5;
   margin-bottom: 5%;
   padding: 10px;
   border-radius: 10px;
+}
+.name-surname-card {
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.dob-card {
+  margin: 15px 0 !important;
 }
 .open-card-button {
   background-color: #231f20;
@@ -136,9 +144,42 @@ html {
 .container-map {
   height: 100vh;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .map-container {
   height: 100%;
+}
+.map-header-wrapper {
+  background-color: #231f20;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  color: #ffff;
+  font-family: "Barlow", sans-serif;
+}
+@media (max-width: 757px) {
+  .map-mms {
+    border: 2px solid white;
+    display: none;
+  }
+  .map-header-wrapper span,
+  p {
+    display: none;
+  }
+}
+.info-img-wrapper {
+  font-weight: 200;
+  display: flex;
+  justify-content: center;
+}
+.info-img-wrapper img {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.info-img-wrapper p {
+  cursor: pointer;
 }
 .small-button {
   width: 90%;
@@ -151,7 +192,71 @@ html {
   justify-content: center;
   align-items: center;
 }
-.map-text {
+.info-container {
+  background-color: #fff;
   position: absolute;
-  top: 25%;
+  width: 95%;
+  height: 25%;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, -50%);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  display: flex;
+  align-items: center;
+  font-family: "Barlow", sans-serif;
+}
+.info-container h4,
+p {
+  margin: 5px 0 !important;
+  padding: 0;
+}
+.info-container h4 {
+  margin-bottom: 10px !important;
+  font-weight: bold;
+}
+.info-container-heads {
+  color: rgba(0, 20, 12, 0.75);
+}
+.info-container-date {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+}
+.info-container-info {
+  font-weight: 500;
+}
+.info-container.close {
+  animation-name: closeContainer;
+  animation-duration: 0.5s;
+  top: 150%;
+}
+.info-container.open {
+  animation-name: openContainer;
+  animation-duration: 0.5s;
+  top: 90%;
+}
+@keyframes closeContainer {
+  0% {
+    top: 90%;
+  }
+  100% {
+    top: 150%;
+  }
+}
+@keyframes openContainer {
+  0% {
+    top: 150%;
+  }
+  100% {
+    top: 90%;
+  }
+}
+.hehe {
+  position: absolute;
+  top: 50%;
+}
+@media (max-width: 575px) {
+  .info-container.open {
+    top: 88%;
+  }
 }

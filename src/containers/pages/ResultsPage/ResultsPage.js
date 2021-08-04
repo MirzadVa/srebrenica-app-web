@@ -18,6 +18,8 @@ const ResultsPage = () => {
 
     const [data, setData] = useState([])
     const [name, setName] = useState('')
+    const [surname, setSurname] = useState('')
+    const [fatherName, setFatherName] = useState('')
     const [isLoading, setIsLoading] = useState(true)
 
     const getData = async (parsed) => {
@@ -36,13 +38,16 @@ const ResultsPage = () => {
         }
     }
     const openMap = (elem) => {
-        const { gps_lat,  gps_long} = elem
-        history.push(`/mapa?lat=${gps_lat}&long=${gps_long}`)
+        const { gps_lat,  gps_long, id_grobnog_mjesta } = elem
+        history.push(`/mapa?id=${id_grobnog_mjesta}&lat=${gps_lat}&long=${gps_long}`)
     }
 
     useEffect(() => {
         const parsed = queryString.parse(window.location.search);
-        setName(parsed.ime)
+        const { ime, prezime, imeOca } = parsed
+        setName(ime)
+        setSurname(prezime)
+        setFatherName(imeOca)
         getData(parsed)
     },[])
 
@@ -52,7 +57,7 @@ const ResultsPage = () => {
                 <Col md={4} className='text-center'>
                     <div className='back-to-search'>
                         <img src={arrowLeft}/>
-                        <span>Nazad na pretragu</span>
+                        <span onClick={() => history.goBack()}>Nazad na pretragu</span>
                     </div>
                 </Col>
                 <Col md={4}></Col>
@@ -66,7 +71,7 @@ const ResultsPage = () => {
             <>
                 <Row>
                     <Col md={12} className='text-center'>
-                        <ResultsFound totalCount={data.length} name={name}/>
+                        <ResultsFound totalCount={data.length} name={name} surname={surname} fatherName={fatherName}/>
                     </Col>
                 </Row>
                 <Row className='text-center mt-5 results-row'>

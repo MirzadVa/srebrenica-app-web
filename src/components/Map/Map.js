@@ -5,7 +5,7 @@ import axios from 'axios';
 import Config from 'config/index'
 
 
-const Map = ({lat, long}) => {
+const Map = ({lat, long, onClick}) => {
     mapboxgl.accessToken = Config.MAPBOX_ACCESS_TOKEN
 
     const mapContainer = useRef(null);
@@ -62,7 +62,7 @@ const Map = ({lat, long}) => {
 
             var marker2 = new mapboxgl.Marker({color: 'black'})
                 .setPopup(new mapboxgl.Popup().setHTML(
-                    `<div class="popup-div"> <p> Ime (Ime oca) Prezime </p> <button class='open-card-button small-button'>Otvori</button> </div>`
+                    `<div class="popup-div"> <p> Ime (Ime oca) Prezime </p></div>`
                 ))
                 .setLngLat(endRoute)
                 .addTo(map.current);
@@ -73,7 +73,7 @@ const Map = ({lat, long}) => {
         getData()
     }, [])
     return (
-            <div ref={mapContainer}  className="map-container"/>
+            <div ref={mapContainer}  className="map-container" onClick={() => onClick()}/>
     );
 }
 
