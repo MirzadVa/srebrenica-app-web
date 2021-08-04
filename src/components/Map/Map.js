@@ -4,7 +4,6 @@ import axios from 'axios';
 
 import Config from 'config/index'
 
-
 const Map = ({lat, long, onClick, victimData}) => {
     mapboxgl.accessToken = Config.MAPBOX_ACCESS_TOKEN
 

@@ -13,7 +13,7 @@ const MapHeader = () => {
         <Row className='map-header-wrapper'>
             <Col md={4} sm={4} xs={4} className='text-center'>
                 <div className='back-to-search'>
-                    <img src={arrowLeft} alt='Strelica nazad' className='back-arrow'/>
+                    <img onClick={() => history.goBack()} src={arrowLeft} alt='Strelica nazad' className='back-arrow'/>
                     <span onClick={() => history.goBack()} className='back-text'>Nazad na rezultate pretrage</span>
                 </div>
             </Col>

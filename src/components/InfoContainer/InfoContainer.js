@@ -5,7 +5,6 @@ import { Row, Col } from 'react-bootstrap'
 import moment from 'moment'
 
 const InfoContainer = ({isOpen, victimData}) => {
-    console.log('DATA', victimData)
     return (
         <Row className={isOpen ? 'info-container text-center open' : "info-container text-center close"}>
                 <Col md={3} sm={6}>

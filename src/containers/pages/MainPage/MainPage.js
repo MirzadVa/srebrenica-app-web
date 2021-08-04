@@ -22,7 +22,7 @@ const MainPage = () => {
         history.push(`rezultati?ime=${ime}&prezime=${prezime}&imeOca=${imeOca}`)
     }
     return (
-        <div className='main-page-wrapper'>
+        <div className='main-page-wrapper main-page'>
             <Row className='headline-row'>
                 <Col sm={12}>
                     <h2>Unesite parametre za pretragu</h2>
@@ -59,12 +59,12 @@ const MainPage = () => {
                 </Col>
             </Row>
             <Row className='footer-row'>
-                <Col md={3} className='col text-center'>
+                <Col md={4} sm={5} className='col text-center'>
                     <img src={mmsImage} alt='Memorial Center Srebrenica' className='mms-image'/>
                 </Col>
-                <Col md={3}></Col>
-                <Col md={3}></Col>
-                <Col md={3} className='col text-center'>
+                {/* <Col md={3}></Col> */}
+                <Col md={4} sm={2}></Col>
+                <Col md={4} sm={5} className='col text-center'>
                     <p className='ajet'>"I ne recite za one koji su na Allahovu<br/> putu poginuli: "Mrtvi su!" Ne, oni su<br/> živi, ali vi to ne znate“!</p>
                     <p className='el-bekare'>El-Bekare</p>
                 </Col>
