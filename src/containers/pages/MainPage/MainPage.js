@@ -60,7 +60,7 @@ const MainPage = () => {
             </Row>
             <Row className='footer-row'>
                 <Col md={4} sm={5} className='col text-center'>
-                    <img src={mmsImage} alt='Memorial Center Srebrenica' className='mms-image'/>
+                    <img src={mmsImage} alt='Memorial Center Srebrenica' className='mms-image main-mms'/>
                 </Col>
                 {/* <Col md={3}></Col> */}
                 <Col md={4} sm={2}></Col>

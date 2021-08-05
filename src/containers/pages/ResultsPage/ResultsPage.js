@@ -55,14 +55,14 @@ const ResultsPage = () => {
         <div className='main-page-wrapper'>
             <Row className='results-page-header'>
                 <Col md={4} sm={4} xs={4} className='text-center'>
-                    <div className='back-to-search'>
-                        <img className='back-arrow' onClick={() => history.goBack()} src={arrowLeft} alt='Left arrow'/>
-                        <span onClick={() => history.goBack()} className='back-text'>Nazad na pretragu</span>
+                    <div className='back-to-search' onClick={() => history.goBack()}>
+                        <img className='back-arrow result-back'  src={arrowLeft} alt='Left arrow'/>
+                        <span className='back-text'>Nazad na pretragu</span>
                     </div>
                 </Col>
                 <Col md={4} sm={4} xs={4}></Col>
                 <Col md={4} sm={4} xs={4} className='text-center'>
-                    <img alt='Memorial Center Srebrenica' src={mmsLogo} className='mms-image result-mms mms-result'/>
+                    <img alt='Memorial Center Srebrenica' src={mmsLogo} onClick={() => history.goBack()} className='mms-image result-mms mms-result'/>
                 </Col>
             </Row>
             {isLoading ? (

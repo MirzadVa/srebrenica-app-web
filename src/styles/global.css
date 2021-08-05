@@ -90,6 +90,7 @@ body::-webkit-scrollbar-thumb {
 }
 .result-mms {
   width: 35%;
+  cursor: pointer;
 }
 .results-page-header {
   padding-top: 1%;
@@ -103,7 +104,7 @@ body::-webkit-scrollbar-thumb {
 }
 .back-to-search img {
   width: 2%;
-  margin-right: 5%;
+  margin-right: 3%;
   cursor: pointer;
 }
 .back-to-search span {
@@ -235,6 +236,9 @@ p {
   animation-duration: 0.5s;
   top: 90%;
 }
+.map-mms {
+  width: 25%;
+}
 @keyframes closeContainer {
   0% {
     top: 90%;
@@ -254,6 +258,27 @@ p {
 .hehe {
   position: absolute;
   top: 50%;
+}
+@media (max-width: 916px) {
+  .result-back {
+    height: 20px !important;
+    width: 20px !important;
+  }
+}
+@media (max-width: 666px) {
+  .back-text {
+    display: none;
+  }
+  .back-arrow {
+    height: 30px !important;
+    width: 30px !important;
+  }
+}
+@media (max-width: 580px) {
+  .main-mms {
+    width: 30% !important;
+    margin-bottom: 10%;
+  }
 }
 @media (max-width: 426px) {
   .main-page {

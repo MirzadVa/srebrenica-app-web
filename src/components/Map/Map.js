@@ -29,7 +29,7 @@ const Map = ({lat, long, onClick, victimData}) => {
         style: 'mapbox://styles/mapbox/streets-v11',
         //lng, lat
         center: start,
-        zoom: 18 
+        zoom: 17
     });
         map.current.on('load', () => {
             map.current.addSource('route', {

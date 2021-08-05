@@ -18,7 +18,7 @@ const MapHeader = () => {
                 </div>
             </Col>
             <Col md={4} sm={4} xs={4} className='text-center'>
-                <img alt='Memorial Center Srebrenica' src={mmsLogo} className='mms-image result-mms map-mms'/>
+                <img onClick={() => history.push('/')} alt='Memorial Center Srebrenica' src={mmsLogo} className='mms-image result-mms map-mms'/>
             </Col>
             <Col md={4} sm={4} xs={4} className='text-center'>
                 <div className='info-img-wrapper'>
