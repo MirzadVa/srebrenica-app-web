@@ -8,7 +8,6 @@ import {
 import { useHistory } from 'react-router'
 import mmsImage from 'assets/LOGO-bijeli.png'
 
-
 const MainPage = () => {
     const [data, setData] = useState({
         ime: '',
