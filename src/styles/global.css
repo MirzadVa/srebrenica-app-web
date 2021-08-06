@@ -247,6 +247,7 @@ p {
     top: 150%;
   }
 }
+
 @keyframes openContainer {
   0% {
     top: 150%;
