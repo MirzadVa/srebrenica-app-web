@@ -16,7 +16,7 @@ const ResultsFound = ({totalCount, name, surname, fatherName}) => {
             <div className='search-result-div'>
                 Pretraga po imenu <br/> 
                 <span className='search-name'>{name} ({fatherName}) {surname}</span><br/> 
-                Nažalost, nismo mogli pronaći rezultate s imenom <b>{name} ({fatherName}) {surname}.</b>
+                Nismo mogli pronaći rezultate s imenom <b>{name} ({fatherName}) {surname}.</b>
             </div>
         )
     }
@@ -34,7 +34,7 @@ const ResultsFound = ({totalCount, name, surname, fatherName}) => {
             <div className='search-result-div'>
                 Pretraga po imenu <br/> 
                 <span className='search-name'>{name}</span><br/> 
-                Nažalost, nismo mogli pronaći rezultate s imenom <b>{name}.</b>
+                Nismo mogli pronaći rezultate s imenom <b>{name}.</b>
             </div>
         )
     }
@@ -53,7 +53,7 @@ const ResultsFound = ({totalCount, name, surname, fatherName}) => {
             <div className='search-result-div'>
                 Pretraga po prezimenu <br/> 
                 <span className='search-name'>{surname}</span><br/> 
-                Nažalost, nismo mogli pronaći rezultate s prezimenom <b>{surname}.</b>
+                Nismo mogli pronaći rezultate s prezimenom <b>{surname}.</b>
             </div>
         )
     }
@@ -72,7 +72,7 @@ const ResultsFound = ({totalCount, name, surname, fatherName}) => {
             <div className='search-result-div'>
                 Pretraga po imenu oca <br/> 
                 <span className='search-name'>{fatherName}</span><br/> 
-                Nažalost, nismo mogli pronaći rezultate s imenom oca <b>{fatherName}.</b>
+                Nismo mogli pronaći rezultate s imenom oca <b>{fatherName}.</b>
             </div>
         )
     }
