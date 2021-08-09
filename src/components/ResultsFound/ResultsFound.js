@@ -2,6 +2,24 @@
 import React from 'react'
 
 const ResultsFound = ({totalCount, name, surname, fatherName}) => {
+    if(totalCount > 0 && name !== '' && surname !=='' && fatherName !== ''){
+        return (
+            <div className='search-result-div'>
+                Pretraga po imenu <br/> 
+                <span className='search-name'>{name} ({fatherName}) {surname}</span><br/> 
+                {totalCount} mogućih poklapanja
+            </div>
+        )
+    }
+    if(totalCount === 0 && name !== '' && surname !=='' && fatherName !== ''){
+        return (
+            <div className='search-result-div'>
+                Pretraga po imenu <br/> 
+                <span className='search-name'>{name} ({fatherName}) {surname}</span><br/> 
+                Nažalost, nismo mogli pronaći rezultate s imenom <b>{name} ({fatherName}) {surname}.</b>
+            </div>
+        )
+    }
     if(totalCount > 0 && name !== ''){
         return (
             <div className='search-result-div'>

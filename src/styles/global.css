@@ -121,6 +121,7 @@ body::-webkit-scrollbar-thumb {
 .search-name {
   font-size: 30px;
   font-weight: 400;
+  text-transform: capitalize;
 }
 .results-row {
   width: 90%;
