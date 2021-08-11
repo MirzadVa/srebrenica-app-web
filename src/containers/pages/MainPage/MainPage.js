@@ -6,7 +6,7 @@ import {
     Form,
 } from 'react-bootstrap'
 import { useHistory } from 'react-router'
-import mmsImage from 'assets/LOGO-bijeli.png'
+import mmsImage from 'assets/LOGO-bijeli-prazni.png'
 
 const MainPage = () => {
     const [data, setData] = useState({
@@ -36,25 +36,29 @@ const MainPage = () => {
                             <Form.Control  
                                 type="text" 
                                 placeholder="Ime (opcionalno)"
-                                onChange={(e) => setData({...data, ime: e.target.value})} />
+                                onChange={(e) => setData({...data, ime: e.target.value})}
+                                onKeyPress={(e) => e.key === 'Enter' ? goToResults() : null} />
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Control 
                                 type="text" 
                                 placeholder="Prezime (opcionalno)"
-                                onChange={(e) => setData({...data, prezime: e.target.value})}/>
+                                onChange={(e) => setData({...data, prezime: e.target.value})}
+                                onKeyPress={(e) => e.key === 'Enter' ? goToResults() : null}/>
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Control 
                                 type="text" 
                                 placeholder="Ime oca (opcionalno)"
-                                onChange={(e) => setData({...data, imeOca: e.target.value})}/>
+                                onChange={(e) => setData({...data, imeOca: e.target.value})}
+                                onKeyPress={(e) => e.key === 'Enter' ? goToResults() : null}/>
                         </Form.Group>
                     </Form>
                 <Col sm={12}>
                     <button 
                         className='search-button'
-                        onClick={goToResults}>Pretraži</button>
+                        onClick={goToResults}
+                        >Pretraži</button>
                 </Col>
             </Row>
             <Row className='footer-row'>
